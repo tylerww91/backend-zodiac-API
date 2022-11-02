@@ -3,7 +3,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 const { signs } = require('../lib/zodiac-data.js');
-const { hSigns } = require('../lib/horoscope-data.js');
+// const { hSigns } = require('../lib/horoscope-data.js');
 
 describe('signs routes', () => {
   it('/zodiac should return a list of zodiac signs with their names and ids', async () => {
@@ -34,6 +34,6 @@ describe('hSigns routes', () => {
       sign: 'aries',
       horoscope: 'Pet many cats',
     };
-    expect(res.body).toEqual(aries);
+    expect(res.body).toEqual(aries.horoscope);
   });
 });
